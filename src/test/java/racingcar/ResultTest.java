@@ -20,4 +20,16 @@ class ResultTest {
         assertThat(winners).hasSize(3);
     }
 
+    @Test
+    @DisplayName("가장 많이 이동한 경우 우승한다.")
+    void getWinnersIfOneWinner() throws Exception {
+        //given
+        List<Car> racingCars = Arrays.asList(Car.of("dori"), Car.of("pobi"), Car.of("jun"));
+        Car winner = racingCars.get(0);
+        winner.move(4);
+        //when
+        List<Car> winners = Result.getWinners(racingCars);
+        //then
+        assertThat(winners).containsOnly(winner);
+    }
 }
