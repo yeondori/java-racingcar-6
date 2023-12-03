@@ -1,7 +1,5 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class Car {
     private final String name;
     private int position;
@@ -17,14 +15,12 @@ public class Car {
     }
 
     private static void validateName(String name) {
-        if (name.length()>5) {
+        if (name.length() > 5) {
             throw new IllegalArgumentException("[ERROR] 이름은 5자 이내여야 합니다.");
         }
     }
 
-    public void move() {
-        int randomNumber = Randoms.pickNumberInRange(0, 9);
-
+    public void move(int randomNumber) {
         if (randomNumber >= 4) {
             position++;
         }
