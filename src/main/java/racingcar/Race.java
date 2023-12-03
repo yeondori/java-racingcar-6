@@ -28,4 +28,8 @@ public class Race {
         return racingCars.stream()
                 .collect(Collectors.toMap(Car::getName, Car::getPosition));
     }
+
+    public List<Car> getRacingCars() {
+        return racingCars;
+    }
 }
