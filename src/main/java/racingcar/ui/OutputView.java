@@ -7,9 +7,8 @@ import java.util.Map;
 
 public class OutputView {
     public void printResult(Map<String, Integer> runResult) {
-        System.out.println("실행 결과");
-
         runResult.forEach((name, position) -> System.out.println(name + " : " + "-".repeat(position)));
+        System.out.println("");
     }
 
     public void printWinners(List<Car> winners) {
@@ -17,6 +16,6 @@ public class OutputView {
                 .map(Car::getName)
                 .toList();
 
-        System.out.println("최종 우승자 : " + String.join(",", winnerNames));
+        System.out.println("최종 우승자 : " + String.join(", ", winnerNames));
     }
 }
